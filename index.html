@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 5 - JavaScript Fundamentals</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>My Journal</h1>
+        <p>Week 5 - JavaScript Fundamentals Assignment</p>
+    </header>
+
+    <div class="container">
+        <!-- Entry Form (Dummy - for layout purposes) -->
+        <div class="entry-form">
+            <h2>Add New Entry</h2>
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <input type="text" id="title" placeholder="Enter entry title..." disabled>
+            </div>
+            <div class="form-group">
+                <label for="date">Date:</label>
+                <input type="date" id="date" disabled>
+            </div>
+            <div class="form-group">
+                <label for="content">Content:</label>
+                <textarea id="content" placeholder="Write your entry here..." disabled></textarea>
+            </div>
+            <button class="btn" disabled>Add Entry (Coming Soon!)</button>
+            <button class="btn btn-secondary" disabled>Clear Form</button>
+        </div>
+
+        <!-- Entry List Area -->
+        <div class="entry-list">
+            <h2>Journal Entries</h2>
+            <div id="entriesContainer">
+                <!-- Entries will be dynamically generated here by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+
+    <!-- Footer Section -->
+<footer>
+  <p>&copy; 2025 PLE | JavaScript Fundamentals - Week 5 Project</p>
+</footer>
+
+</body>
+</html>

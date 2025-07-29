@@ -1,0 +1,107 @@
+/* General Body Styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+/* Header */
+header {
+  background-color: #320375;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+/* Entry Form Section */
+.entry-form {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 6px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="date"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+/* Buttons */
+.btn {
+  background-color: #35047a;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: not-allowed;
+  margin-right: 10px;
+}
+
+.btn-secondary {
+  background-color: #999;
+}
+
+/* Entry List Section */
+.entry-list {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Individual Entry */
+.entry {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+.entry-content {
+  margin: 10px 0;
+}
+
+.toggle-btn {
+  background-color: #13036d;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  background-color: #260475;
+  color: #eee;
+  padding: 15px 0;
+  margin-top: 40px;
+  font-size: 0.9em;
+  border-top: 1px solid #1e105a;
+}
