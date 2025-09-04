@@ -1,6 +1,9 @@
 # 📓 Professional Journal App  
 
-![PLE TECH Logo](Image/LOGO.jpg)  
+<p align="center">
+  <img src="Image/logo.jpg" alt="Company Logo" width="200">
+</p>
+
 
 > Developed by **PLE TECH GLOBAL LIMITED**  
 
