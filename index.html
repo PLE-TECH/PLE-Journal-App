@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Journal</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="profile-section">
+                <div class="profile-picture">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9IiM0ZTU0YzgiLz48dGV4dCB4PSIzMCIgeT0iNTUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSI0MCIgZmlsbD0id2hpdGUiPlU8L3RleHQ+PC9zdmc+" alt="Your Profile Picture" id="profile-img">
+                    <input type="file" id="profile-upload" accept="image/*" style="display: none;">
+                    <button id="change-profile-btn" class="btn-secondary">
+                        <i class="fas fa-camera"></i>
+                    </button>
+                </div>
+                <h1><i class="fas fa-book"></i> My Personal Journal</h1>
+            </div>
+            <div class="header-controls">
+                <button id="new-entry-btn" class="btn-primary">
+                    <i class="fas fa-plus"></i> New Entry
+                </button>
+                <button id="export-btn" class="btn-secondary">
+                    <i class="fas fa-download"></i> Export
+                </button>
+                <button id="import-btn" class="btn-secondary">
+                    <i class="fas fa-upload"></i> Import
+                </button>
+                <input type="file" id="import-file" accept=".json" style="display: none;">
+                <button id="theme-toggle" class="btn-secondary">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <aside class="sidebar">
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search entries...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="entries-list">
+                    <h2>Your Entries</h2>
+                    <div id="entries-container">
+                        <!-- Entries will be dynamically added here -->
+                    </div>
+                </div>
+                
+                <div class="stats-container">
+                    <h2>Journal Statistics</h2>
+                    <div class="stat-item">
+                        <span class="stat-label">Total Entries:</span>
+                        <span class="stat-value" id="total-entries">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">This Month:</span>
+                        <span class="stat-value" id="month-entries">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Most Used Tags:</span>
+                        <div id="top-tags" class="tag-cloud"></div>
+                    </div>
+                </div>
+            </aside>
+
+            <section class="editor">
+                <div class="editor-header">
+                    <input type="text" id="entry-title" placeholder="Entry Title">
+                    <div class="date-picker">
+                        <input type="date" id="entry-date">
+                    </div>
+                </div>
+                
+                <div class="tag-container">
+                    <input type="text" id="tag-input" placeholder="Add tags...">
+                    <button id="add-tag-btn" class="btn-secondary">Add</button>
+                </div>
+                <div id="tags-display"></div>
+                
+                <div class="editor-toolbar">
+                    <button data-command="bold" title="Bold"><i class="fas fa-bold"></i></button>
+                    <button data-command="italic" title="Italic"><i class="fas fa-italic"></i></button>
+                    <button data-command="underline" title="Underline"><i class="fas fa-underline"></i></button>
+                    <button data-command="insertUnorderedList" title="Bullet List"><i class="fas fa-list-ul"></i></button>
+                    <button data-command="insertOrderedList" title="Numbered List"><i class="fas fa-list-ol"></i></button>
+                    <input type="file" id="image-upload" accept="image/*" style="display: none;">
+                    <button id="add-image-btn" class="btn-secondary" title="Add Image">
+                        <i class="fas fa-image"></i>
+                    </button>
+                </div>
+                
+                <div class="editor-body">
+                    <div id="entry-content" contenteditable="true" class="rich-text-editor" placeholder="Write your thoughts here..."></div>
+                </div>
+                
+                <div id="entry-images-container" class="entry-images"></div>
+                
+                <div class="editor-footer">
+                    <div class="editor-stats">
+                        <span id="word-count">0 words</span>
+                        <span id="reading-time">0 min read</span>
+                    </div>
+                    
+                    <div class="mood-selector">
+                        <span>Mood: </span>
+                        <div class="mood-options">
+                            <i class="fas fa-smile" data-mood="happy" title="Happy"></i>
+                            <i class="fas fa-meh" data-mood="neutral" title="Neutral"></i>
+                            <i class="fas fa-frown" data-mood="sad" title="Sad"></i>
+                            <i class="fas fa-angry" data-mood="angry" title="Angry"></i>
+                            <i class="fas fa-tired" data-mood="tired" title="Tired"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="editor-actions">
+                        <button id="save-btn" class="btn-primary">
+                            <i class="fas fa-save"></i> Save Entry
+                        </button>
+                        <button id="delete-btn" class="btn-danger">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
