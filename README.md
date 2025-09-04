@@ -71,12 +71,3 @@ yaml
 Copy code
 
 ---
-
-📌 Next Steps for You:  
-1. Create a new file `README.md` in your project root.  
-2. Copy–paste the above content.  
-3. Run these commands:  
-   ```bash
-   git add README.md
-   git commit -m "Added branded README"
-   git push origin main
